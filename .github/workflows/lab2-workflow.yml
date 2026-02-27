@@ -20,7 +20,9 @@ jobs:
       - run: echo "Exploring Workflow Dispatch Trigger"
   job2:
     runs-on: ubuntu-latest
+    env:
+      CUSTOM_MESSAGE: ${{ inputs.custom_message }}
     steps:
       - name: 'Printing Custom Message'
-        run: echo {{ inputs.custom_message }}
+        run: echo $CUSTOM_MESSAGE
           
